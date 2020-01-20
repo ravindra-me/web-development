@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+
+</head>
+<style>
+    *{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+body{
+    font-size: 25px;
+    color:#fff
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#fff;
+    width: 100vw;
+    height:100vh;
+
+}
+.calculator{
+    display: grid;
+    grid-template-rows: 9% 20% 10% auto;
+    background-color:  rgb(83, 78, 78);
+    width:300px;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);;
+
+}
+.header{
+    background-color: rgb(83, 78, 78);
+}
+.body{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+    padding-right: 20px;
+    background-color: rgb(83, 78, 78);
+    border-bottom:#fff;
+}
+.footer{
+    display:grid;
+    justify-content: space-around;
+    padding:0 5px;
+    row-gap: 5px;
+    padding:20px;
+    column-gap: 5px;
+    grid-template-columns:auto auto auto auto ;
+    background-color: rgb(83, 78, 78);
+
+}
+.footer div{
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    width:50px;
+    height: 50px;
+    cursor: pointer;
+
+}
+.clear{
+    padding-top: 20px;
+    padding-left: 35px;
+    cursor: pointer;
+}
+.symbol{
+    color:gold;
+    font-weight:bold;
+}
+.footer div:hover{
+    background-color: grey;
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="header"></div>
+            <div class="body">
+                <div>
+                    <h1 id="output"></h1>
+                    <p id="input"></p>
+
+                </div>
+            </div> 
+            <div onclick="calculate('AC')" class="clear"><span>AC</span></div>
+            <div class="footer">
+                <div onclick="calculate('7')" class="btn">7</div>
+                <div onclick="calculate('8')" class="btn"><span>8</span></div>
+                <div onclick="calculate('9')" class="btn"><span>9</span></div>
+                <div onclick="calculate('/')" class="symbol" class="btn"><span>/</span></div>
+                <div onclick="calculate('4')" class="btn"><span>4</span></div>
+                <div onclick="calculate('5')" class="btn"><span>5</span></div>
+                <div onclick="calculate('6')" class="btn"><span>6</span></div>
+                <div onclick="calculate('*')" class="symbol "class="btn"><span>*</span></div>
+                <div onclick="calculate('1')" class="btn"><span>1</span></div>
+                <div onclick="calculate('2')" class="btn"><span>2</span></div>
+                <div onclick="calculate('3')" class="btn"><span>3</span></div>
+                <div onclick="calculate('-')" class="symbol" class="btn"><span>-</span></div>
+                <div onclick="calculate('0')" class="btn"><span>0</span></div>
+                <div onclick="calculate('.')" class="btn"><span>.</span></div>
+                <div onclick="calculate('=')" class="symbol" class="btn"><span>=</span></div>
+                <div onclick="calculate('+')" class="symbol" class="btn"><span>+</span></div>  
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.5/math.js"></script>
+    <script>
+    var input=document.getElementById("input");
+    var output=document.getElementById("output")
+    function calculate(data){
+        switch(data){
+            case 'AC':
+                input.innerHTML="";
+                output.innerHTML="";
+                break;
+            case '=':
+                output.innerHTML=math.eval(input.innerHTML);
+                break;
+        default:
+            input.innerHTML+=data;
+        }
+    }
+    </script>
+</body>
+</html>

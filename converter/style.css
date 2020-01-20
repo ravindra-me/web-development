@@ -1,0 +1,12 @@
+body{
+  margin-top: 70px;
+  background-color: #333;
+  color:#fff;
+}
+.card{
+  background-color: green;
+  margin-bottom: 2px;
+}
+.container{
+   margin: 0 auto;
+}

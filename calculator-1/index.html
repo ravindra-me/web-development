@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #009688;
+
+  }
+
+  .calculater {
+    display: grid;
+    grid-auto-rows: 8% 25% auto;
+    width: 300px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+
+  }
+
+  .header {
+    background-color: #fff;
+  }
+
+  .input {
+    background-color: #f7d6d3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px;
+    text-align: right;
+
+
+
+  }
+
+  .body {
+    background-color: #e6e6e6;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    justify-content: space-around;
+    padding: 10px 0;
+    grid-template-columns: auto auto auto auto;
+  }
+
+  .body div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+
+  }
+
+  .body div.symbol {
+    background-color: #ff7843;
+  }
+
+  .body div.dark-symbol {
+    background-color: #f4511e;
+  }
+
+  .body div:hover {
+    cursor: pointer;
+    background-color: gainsboro;
+  }
+
+  .body div.symbol:hover {
+    background-color: #ff8a55;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="calculater">
+      <div class="header"></div>
+      <div class="input">
+        <div>
+          <h1 id="output">0</h1>
+          <p id="input"></p>
+        </div>
+      </div>
+      <div class="body">
+        <div onclick="calculate('C')" class="symbol"><span>C</span></div onclick="calculate('')">
+        <div onclick="calculate('AC')" class="symbol"><span>AC</span></div>
+        <dIv onclick="calculate('%')" class="symbol"><span>%</span></div>
+        <div onclick="calculate('/')" class="symbol"><span>/</span></div>
+        <div onclick="calculate('7')"><span>7</span></div>
+        <div onclick="calculate('8')"><span>8</span></div>
+        <div onclick="calculate('9')"><span>9</span></div>
+        <div onclick="calculate('*')" class="symbol"><span>*</span></div>
+        <div onclick="calculate('4')"><span>4</span></div>
+        <div onclick="calculate('5')"><span>5</span></div>
+        <div onclick="calculate('6')"><span>6</span></div>
+        <div onclick="calculate('-')" class="symbol"><span>-</span></div>
+        <div onclick="calculate('1')"><span>1</span></div>
+        <div onclick="calculate('2')"><span>2</span></div>
+        <div onclick="calculate('3')"><span>3</span></div>
+        <diV onclick="calculate('+')" class="symbol"><span>+</span></diV>
+        <div onclick="calculate('0')"><span>0</span></div>
+        <div onclick="calculate('00')"><span>00</span></div>
+        <div onclick="calculate('.')"><span>.</span></div>
+        <div onclick="calculate('=')" class="dark-symbol"><span>=</span></div>
+
+
+
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.5/math.js"></script>
+  <script>
+    var input = document.getElementById("input");
+    var output = document.getElementById("output");
+
+    function calculate(data) {
+      switch (data) {
+        case 'AC':
+          input.innerHTML = "";
+          break;
+        case 'C':
+          input.innerHTML = input.innerHTML.substr(0, input.innerHTML.length - 1);
+          break;
+        case '=':
+          output.innerHTML = math.eval(input.innerHTML);
+          break;
+        default:
+          input.innerHTML += data;
+
+      }
+    }
+  </script>
+
+</body>
+
+</html>
