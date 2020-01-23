@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    background-color: #f4f4f4;
+
+}
+header{
+    background-color: #35424a;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+header .container{
+    background-color: #35424a;
+    color: #fff;
+    padding: 20px ;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: rgb(196, 83, 8) 3px solid;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+header li{
+    list-style: none;
+    padding: 0 20px;
+}
+ul li a{
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font: 16px;
+}
+#branding{
+    
+}
+#branding h1{
+    margin: 0;
+}
+nav ul{
+    display: flex;
+    margin: 10px 0 0 0;
+}
+#showcase{
+    margin: 0 auto;
+    text-align: center;
+    background: url(img/showcase.jpg) no-repeat 0 -400px;
+    min-height: 400px;
+    color: #fff;
+
+    
+}
+#showcase .container{
+    margin:0 auto;
+    text-align: center;
+}
+#showcase h1{
+    margin: 100px 0 0 0;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color:#fff;
+
+}
+#showcase p{
+    font-size: 20px;
+}
+#newsletter .container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding:20px;
+    color:#ffffff;
+    
+}
+#newsletter {
+    background-color: #373835; 
+
+}
+form{
+    display: flex;
+    justify-content: center;
+
+}
+input{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+.button{
+    margin-left: 10px;
+    height: 25px;
+    padding: 0 20px;
+    background-color: aquamarine;
+    font-size: ;
+
+}
+
+#boxes .container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
+#boxes h3{
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.box{
+    margin-bottom: 10px;
+}
+footer{
+    display: flex;
+    background-color: #e8491d;
+    justify-content: center;
+    padding:20px 0 20px 0;
+    color:#fff;
+    font-size: 20px;
+}
