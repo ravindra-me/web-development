@@ -42,6 +42,16 @@ ul li a{
     text-transform: uppercase;
     font: 16px;
 }
+span{
+    color: rgb(226, 17, 17);
+    font-weight: bold;
+}
+a:hover{
+    display: block;
+    color:cornflowerblue;
+    text-decoration: underline;
+    
+}
 #branding{
     
 }
