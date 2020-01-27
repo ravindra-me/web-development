@@ -1,0 +1,22 @@
+h1{
+  color:blue;
+  font-size: 3rem;
+}
+img:hover{
+  background-color: gold;
+}
+/**************class slector********/
+
+.joy{
+  background-color: red;
+}
+.microsoft{
+  background-color: green;
+}
+.circular{
+  border-radius: 100%;
+}
+/*************id selector**********/
+#heading{
+  color:red;
+}
