@@ -1,4 +1,4 @@
-const array = [1,2,3];
+const array = [1,2,3,10];
 const double = [];
 const newarray = array.forEach((num) => {
     double.push(num*2);
@@ -19,5 +19,5 @@ console.log('filter' , filterArray);
 //reduce
 const reduceArray = array.reduce((accumulator , num)=>{
     return accumulator+num;
-})
-console.log(reduceArray);
+});
+console.log('reduce' , reduceArray);
